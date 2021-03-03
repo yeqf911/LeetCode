@@ -13,9 +13,11 @@ class Q566(Solution):
             return nums
 
         new_nums = [[0 for _ in range(c)] for _ in range(r)]
+        index = 0
         for i in range(r):
             for j in range(c):
-                new_nums[i][j] = nums[i][j]
+                new_nums[i][j] = nums[int(index / col)][index % col]
+                index += 1
 
         return new_nums
 
